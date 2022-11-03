@@ -1,0 +1,44 @@
+*{
+    background-color: aliceblue;
+}
+
+img {
+    margin-top: 20px;
+    width: 350px;
+    height: 350px;
+    border-radius: 1000px;
+}
+
+.rotate:nth-child(even) {
+    animation: rotatingL 10s linear infinite;
+  }
+
+
+  @keyframes rotatingL {
+    0% {
+      transform:rotate(-45deg) ;
+    }
+    50% {
+        transform: rotate(45deg);
+    }
+    100% {
+        transform: rotate(-45deg);
+    }
+  }
+
+.rotate:nth-child(odd) {
+    animation: rotatingR 10s linear infinite;
+}
+
+
+  @keyframes rotatingR {
+    0% {
+      transform:rotate(45deg) ;
+    }
+    50% {
+        transform: rotate(-45deg);
+    }
+    100% {
+        transform: rotate(45deg);
+    }
+  }

@@ -67,3 +67,88 @@ ____
 
 # Partie 3
 
+*  Créez un bouton qui va quand il est cliqué exécuter une
+fonction testPromise
+*  Créez une fonction testPromise qui va :
+    - Quand elle commence afficher le text “1”
+    - Créez une Promise qui va dans sa callback afficher le
+    text “2” puis va dans un setTimeout avec un temps
+    aléatoire (Math.random() * 2000 + 1000) resolve “3”
+    - Utilisez le then sur la Promise créez précédemment
+    pour récupérer la valeur que vous avez résolue et
+    afficher la
+    - Avant de finir la fonction afficher le text “4“
+
+*  Avant d'exécuter le code, essayer de deviner l’ordre de
+sortie
+
+## EXERCICE 
+
+* 1) Créez une fonction getToken
+* 2) Cette fonction retourne une promesse
+* 3) Utiliser un setTimeout qui durera 2000 millisecondes
+* 4) Tester dans la callbask du setTimeout :
+
+if (Math.random() > 0.5)
+
+* 5) resolve avec la valeur d’un token = "qsdfEDLSoie5d8899;dEDd"
+* 6) Sinon reject avec l’erreur "Vous n'avez pas pu obtenir de token"
+* 7) Utiliser le then sur la promise pour récupérer la valeur et
+l’afficher
+
+* 8) Utiliser le catch sur la promise pour récupérer le message
+d’erreur et l’afficher
+
+## Exercice chainage de promesses
+
+* 1) Créez une fonction getUser qui prend un token en paramètre
+* 2) Cette fonction retourne une promesse
+* 3) Utiliser un setTimeout qui durera 2000 millisecondes
+* 4) Tester dans la callbask du setTimeout :
+
+if (Math.random() > 0.5)
+
+* 5) resolve avec la valeur correspondant à un objet user : { id: 1, token:
+token}
+* 6) Sinon reject avec l’erreur "Pas d’utilisateur"
+* 7) Le premier then appel la promise getToken pour récupérer le token qui
+va retourner l’appel à la promise getUser en lui passant le token
+récupéré.
+* 8) Le deuxième then afficher la valeur renvoyer par la promise getUser
+* 9) Un catch affiche le message d’erreur
+
+## Exercice
+
+* 1) En utilisation les deux promise précédente : getToken et getUser
+* 2) Créez une fonction getTokenUser qui sera async
+* 3) Dans un try ... catch, appeler dans cette fonction la promise
+getToken pour récupérer le token avec await
+* 4) Appeler la promise getUser pour récupérer le user avec await
+* 5) Afficher le token et le user
+* 6) Afficher dans le catch le message d’erreur
+
+
+## Exercice – Récupérer des GIF
+
+
+* 1) Document : https://developers.giphy.com/docs/api#quick-start-guide
+
+* 2) Créer un compte et récupérez votre API KEY
+
+* 3) Créer un fichier gifs.html qui contient un formulaire avec 2 champs: un pour du
+texte qui servira au terme recherché, et l’autre pour le nombre max de gif à
+récupérer
+
+* 4) Depuis un fichier JS, écrire le code pour faire un appel à l’API (fetch) sur
+https://api.giphy.com/v1/gifs/search
+    a) Vous devez y renseigner plusieurs QueryStrings :
+        - Q = le terme utilisé pour la recherche
+        - api_key = Votre API KEY
+        - Limit = le nombre de résultat
+        - lang = langue des gifs récupérés
+
+Exemple :
+https://api.giphy.com/v1/gifs/search?api_key=WlXD6BcSdEdBFJ4viI8NVLE6toKAbpxy&q=javascript&limit=10&lang=fr
+
+* 5) Récupérer les urls des gifs (.gif) et les injecter dans des balises <img> dans votre
+page HTML

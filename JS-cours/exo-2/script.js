@@ -63,11 +63,7 @@ for (let i = 0; i < links.length; i++) {
 
 
 
-  //formulaire
-
-
-
-
+  // validation formulaire
   document.querySelector('#confirmForm').addEventListener('click', function (){
 
     let inputSurname = document.querySelector('#surname').value;
@@ -94,11 +90,5 @@ for (let i = 0; i < links.length; i++) {
     } else {
         errorDiv.innerHTML = `<p class="goodText">C'EST BON</p> <img class="rotate" src='./potato.png'>`
     }
-
-    // console.log(inputSurname);
-    // console.log(inputName);
-    // console.log(inputEmail);
-    // console.log(inputTel);
-    // console.log(inputPwd);
-
+    
   })
