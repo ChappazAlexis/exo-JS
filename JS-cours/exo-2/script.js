@@ -65,6 +65,9 @@ for (let i = 0; i < links.length; i++) {
 
   //formulaire
 
+
+
+
   document.querySelector('#confirmForm').addEventListener('click', function (){
 
     let inputSurname = document.querySelector('#surname').value;
@@ -75,18 +78,21 @@ for (let i = 0; i < links.length; i++) {
 
     let errorDiv = document.querySelector('#error');
 
+    let regexMail = new RegExp('[a-z0-9]+@[a-z]+\.[a-z]{2,3}');
+    let regexPwd = new RegExp('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$')
+
     if(inputSurname.length == 0 ) {
-        errorDiv.innerHTML = `<p class="errorText">Le prénom est requis</p>`
+        errorDiv.innerHTML = `<p class="errorText">Le prénom est requis</p><img class="rotate" src='./angry.jpeg'>`
     } else if(inputName.length == 0) {
-        errorDiv.innerHTML = `<p class="errorText">Le nom est requis</p>`
-    } else if(inputEmail.length == 0 && inputEmail.includes('@') == false) {
-        errorDiv.innerHTML = `<p class="errorText">Le mail est requis et dois être dans le bon format</p>`
-    } else if(inputTel.length !== 10) {
-        errorDiv.innerHTML = `<p class="errorText">Le téléphone est requis et dois être dans le bon format</p>`
-    } else if(inputPwd.length == 0) {
-        errorDiv.innerHTML = `<p class="errorText">Le mot de passe est requis et doit contenir : 8 caractères, et 1 caractères spécial</p>`
+        errorDiv.innerHTML = `<p class="errorText">Le nom est requis</p><img class="rotate" src='./angry.jpeg'>`
+    } else if(!regexMail.test(inputEmail)) {
+        errorDiv.innerHTML = `<p class="errorText">Le mail est requis et dois être dans le bon format</p><img class="rotate" src='./angry.jpeg'>`
+    } else if(inputTel.length > 10) {
+        errorDiv.innerHTML = `<p class="errorText">Le téléphone est requis et dois être dans le bon format</p><img class="rotate" src='./angry.jpeg'>`
+    } else if(!regexPwd.test(inputPwd)) {
+        errorDiv.innerHTML = `<p class="errorText">Le mot de passe est requis et doit contenir : au moins une minuscule, une majuscule, un chiffre et un caractère spécial, et au moins 8 caractères</p><img class="rotate" src='./angry.jpeg'>`
     } else {
-        errorDiv.innerHTML = `<p class="goodText">C'EST BON</p>`
+        errorDiv.innerHTML = `<p class="goodText">C'EST BON</p> <img class="rotate" src='./potato.png'>`
     }
 
     // console.log(inputSurname);
@@ -96,6 +102,3 @@ for (let i = 0; i < links.length; i++) {
     // console.log(inputPwd);
 
   })
-
-
-//     abcdefghijqlmnopqrst ABCDEFGHIJKLMNOPQRSTUVWXYZ !?#

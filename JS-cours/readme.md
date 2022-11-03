@@ -1,3 +1,5 @@
+# Partie 2
+
 ## EXERCICE 2
 
 #### Horloge :
@@ -60,3 +62,8 @@ liste.
     spécial (!, ?, #) (utiliser une regex)
 
 * 4) Afficher les messages d’erreur dans une div
+
+____
+
+# Partie 3
+

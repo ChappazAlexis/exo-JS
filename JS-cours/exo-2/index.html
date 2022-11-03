@@ -38,16 +38,27 @@
   
     <div id="form">
         <form action="">
-            <input type="text" id="surname" placeholder="Prénom" required/>
-            <input type="text" id="name" placeholder="Nom" required>
-            <input type="email" id="email" placeholder="Mail" required>
-            <input type="number" id="tel" placeholder="Telephone" required>
-            <input type="text" id="password" placeholder="password" required>
-            <button id="confirmForm" type="submit">Confirmer</button>
+            <div>
+                <input type="text" id="surname" placeholder="Prénom" />
+            </div>
+            <div>
+                <input type="text" id="name" placeholder="Nom" >
+            </div>
+            <div>
+                <input type="email" id="email" placeholder="Mail" >
+            </div>
+            <div>
+                <input type="number" id="tel" placeholder="Telephone" >
+            </div>
+            <div>
+                <input type="password" id="password" placeholder="password">
+            </div>
+            <button id="confirmForm" >Confirmer</button>
         </form>
     </div>
+    
+    <div id="error"></div>
 
-<div id="error" class="rotate"></div>
 
 
 </body>
